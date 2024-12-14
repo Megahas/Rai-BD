@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, From Begels!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle at top, #ffffff, #f2f2f2, #e6e6e6);
+            color: #5c3b5c;
+            overflow-x: hidden;
+            position: relative;
+        }
+        .header {
+            text-align: center;
+            background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+            padding: 40px;
+            border-bottom: 5px solid #dcdcdc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            font-size: 4em;
+            color: #d94d7e;
+            font-family: 'Brush Script MT', cursive;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .message {
+            text-align: center;
+            margin: 40px auto;
+            font-size: 1.8em;
+            line-height: 1.8;
+            max-width: 700px;
+            color: #823c57;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        .back-button {
+            display: block;
+            text-decoration: none;
+            margin: 50px auto;
+            padding: 15px 25px;
+            background: linear-gradient(to right, #f2d5d5, #d94d7e);
+            color: white;
+            border-radius: 25px;
+            font-size: 1.4em;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 250px;
+            transition: all 0.3s;
+        }
+        .back-button:hover {
+            background: linear-gradient(to right, #d94d7e, #f2d5d5);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .falling-blossoms {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .blossom {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: url('https://cdn.pixabay.com/photo/2017/10/30/16/14/sakura-2901936_1280.png');
+            background-size: cover;
+            border-radius: 50%;
+            animation: fall 7s linear infinite, drift 7s ease-in-out infinite;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        @keyframes drift {
+            0% {
+                transform: translateX(0px);
+            }
+            50% {
+                transform: translateX(30px);
+            }
+            100% {
+                transform: translateX(-30px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Happy Birthday, From Greenhorn Begels!</h1>
+    </div>
+    <div class="message">
+        <p>Happy Birthday You Absolute Legend!</p> 
+        <p>Today's the day you get to eat a ton of cake, pretend calories don't exist 🙂 and accept that you're
+            officially older (but still cooler than everyone else). May your day be filled with laughter,
+            awkward singing, and questionable dance moves.You deserve all the good vibes and maybe even a nap.</p>
+        <p> Here's to another year of your amazing self!
+            Stay awesome, Birthday Star!🌟</p>
+    </div>
+    <a href="index.html" class="back-button">Back to Birthday Page</a>
+    <div class="falling-blossoms">
+        <script>
+            for (let i = 0; i < 50; i++) {
+                const blossom = document.createElement('div');
+                blossom.className = 'blossom';
+                blossom.style.left = Math.random() * 100 + 'vw';
+                blossom.style.animationDelay = Math.random() * 5 + 's';
+                blossom.style.animationDuration = Math.random() * 3 + 5 + 's';
+                document.querySelector('.falling-blossoms').appendChild(blossom);
+            }
+        </script>
+    </div>
+</body>
+</html>

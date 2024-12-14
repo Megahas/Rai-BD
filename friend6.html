@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, From Karma!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle at top, #ffcccc, #ff4d4d, #ff1a1a);
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+        .header {
+            text-align: center;
+            background: linear-gradient(to bottom, #ff1a1a, #ff3333);
+            padding: 40px;
+            border-bottom: 5px solid #e60000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            font-size: 4em;
+            color: #ffb3b3;
+            font-family: 'Brush Script MT', cursive;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .message {
+            text-align: center;
+            margin: 40px auto;
+            font-size: 1.8em;
+            line-height: 1.8;
+            max-width: 700px;
+            color: #ffcccc;
+            background: rgba(255, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .back-button {
+            display: block;
+            text-decoration: none;
+            margin: 50px auto;
+            padding: 15px 25px;
+            background: linear-gradient(to right, #ff4d4d, #ff1a1a);
+            color: white;
+            border-radius: 25px;
+            font-size: 1.4em;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 250px;
+            transition: all 0.3s;
+        }
+        .back-button:hover {
+            background: linear-gradient(to right, #ff1a1a, #ff4d4d);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .falling-blossoms {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .blossom {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: url('https://cdn.pixabay.com/photo/2017/10/30/16/14/sakura-2901936_1280.png');
+            background-size: cover;
+            border-radius: 50%;
+            animation: fall 7s linear infinite, drift 7s ease-in-out infinite;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        @keyframes drift {
+            0% {
+                transform: translateX(0px);
+            }
+            50% {
+                transform: translateX(30px);
+            }
+            100% {
+                transform: translateX(-30px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Happy Birthday, From Sororal Karma!</h1>
+    </div>
+    <div class="message">
+        <p>Happy birthday Rai!!</p> 
+        <p>Wishing you a year filled with love, laughter and all your favourite things.
+            May you always find happiness in the things you do.</p>
+        <p> Hope we make wonderful memories together ❤️ </p>
+        <p>All Of US 😽.</p>
+    </div>
+    <a href="index.html" class="back-button">Back to Birthday Page</a>
+    <div class="falling-blossoms">
+        <script>
+            for (let i = 0; i < 50; i++) {
+                const blossom = document.createElement('div');
+                blossom.className = 'blossom';
+                blossom.style.left = Math.random() * 100 + 'vw';
+                blossom.style.animationDelay = Math.random() * 5 + 's';
+                blossom.style.animationDuration = Math.random() * 3 + 5 + 's';
+                document.querySelector('.falling-blossoms').appendChild(blossom);
+            }
+        </script>
+    </div>
+</body>
+</html>

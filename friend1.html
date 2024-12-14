@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, From Enzo!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle at top, #d3e4c7, #a9b89d, #6c7c5f);
+            color: black;
+            overflow-x: hidden;
+            position: relative;
+        }
+        .header {
+            text-align: center;
+            background: linear-gradient(to bottom, #5e7a5d, #4d5e48);
+            padding: 40px;
+            border-bottom: 5px solid #3b4a34;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            font-size: 4em;
+            color: #ffffff;
+            font-family: 'Brush Script MT', cursive;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .message {
+            text-align: center;
+            margin: 40px auto;
+            font-size: 1.8em;
+            line-height: 1.8;
+            max-width: 700px;
+            color: #3c4a3b;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .back-button {
+            display: block;
+            text-decoration: none;
+            margin: 50px auto;
+            padding: 15px 25px;
+            background: linear-gradient(to right, #6d8c4d, #4a5e3b);
+            color: white;
+            border-radius: 25px;
+            font-size: 1.4em;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 250px;
+            transition: all 0.3s;
+        }
+        .back-button:hover {
+            background: linear-gradient(to right, #4a5e3b, #6d8c4d);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .falling-leaves {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .leaf {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url('https://cdn.pixabay.com/photo/2016/10/06/11/43/leaf-1712164_1280.png');
+            background-size: cover;
+            border-radius: 50%;
+            animation: fall 6s linear infinite, drift 6s ease-in-out infinite;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        @keyframes drift {
+            0% {
+                transform: translateX(0px);
+            }
+            50% {
+                transform: translateX(20px);
+            }
+            100% {
+                transform: translateX(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Happy Birthday, From Sissy Enzoii!</h1>
+    </div>
+    <div class="message">
+        <p>Happy Birthday, Rai the granny!</p> 
+            May this year be a canvas, where you paint your dreams in the brightest colors and create a masterpiece of memories.
+            May every day bring new adventures, laughter, and growth, and may you always be surrounded by love and light. 
+            Here's to another year of becoming the best version of yourself, may it be filled with endless joy and unforgettable moments!🎉👩‍❤️‍💋‍👨</p>
+    </div>
+    <a href="index.html" class="back-button">Back to Birthday Page</a>
+    <div class="falling-leaves">
+        <script>
+            for (let i = 0; i < 50; i++) {
+                const leaf = document.createElement('div');
+                leaf.className = 'leaf';
+                leaf.style.left = Math.random() * 100 + 'vw';
+                leaf.style.animationDelay = Math.random() * 5 + 's';
+                leaf.style.animationDuration = Math.random() * 3 + 5 + 's';
+                document.querySelector('.falling-leaves').appendChild(leaf);
+            }
+        </script>
+    </div>
+</body>
+</html>
